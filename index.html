@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jobberhub - Productivity Tools for Professionals</title>
-    <meta name="description" content="Empowering your career journey with the right tools. From resume builders to salary calculators, everything you need is here.">
-    
+    <meta name="description"
+        content="Empowering your career journey with the right tools. From resume builders to salary calculators, everything you need is here.">
+
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -60,7 +62,8 @@
             display: block;
         }
 
-        button, input {
+        button,
+        input {
             font-family: inherit;
             border: none;
             outline: none;
@@ -103,7 +106,10 @@
         }
 
         /* Typography */
-        h1, h2, h3, h4 {
+        h1,
+        h2,
+        h3,
+        h4 {
             color: var(--text-primary);
             line-height: 1.2;
         }
@@ -157,7 +163,7 @@
             align-items: center;
             gap: 8px;
         }
-        
+
         .navbar-brand svg {
             width: 24px;
             height: 24px;
@@ -211,7 +217,8 @@
             padding-right: 140px;
             background-color: rgba(30, 41, 59, 0.6);
             border: 1px solid var(--border-color);
-            border-radius: 9999px; /* Pill shape */
+            border-radius: 9999px;
+            /* Pill shape */
             color: var(--text-primary);
             font-size: 1rem;
             transition: var(--transition-base);
@@ -239,7 +246,8 @@
 
         .search-btn:hover {
             background-color: var(--accent-hover);
-            transform: translateY(-50%) scale(1.05); /* Slight scale on hover */
+            transform: translateY(-50%) scale(1.05);
+            /* Slight scale on hover */
         }
 
         .popular-tags {
@@ -311,7 +319,7 @@
         .view-all-link:hover {
             text-decoration: underline;
         }
-        
+
         /* Tool Cards */
         .tool-card {
             background-color: var(--bg-card);
@@ -353,7 +361,8 @@
         /* Category Cards */
         .category-card {
             background-color: var(--bg-card);
-            border-radius: 16px; /* Slightly more rounded */
+            border-radius: 16px;
+            /* Slightly more rounded */
             padding: 32px 24px;
             position: relative;
             overflow: hidden;
@@ -373,15 +382,15 @@
             right: -20px;
             width: 120px;
             height: 120px;
-            background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 70%);
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 70%);
             border-radius: 50%;
             transition: var(--transition-base);
         }
 
         .category-card:hover {
-             border-color: var(--border-color);
-             background-color: var(--bg-card-hover);
-             transform: scale(1.02);
+            border-color: var(--border-color);
+            background-color: var(--bg-card-hover);
+            transform: scale(1.02);
         }
 
         .category-card:hover::before {
@@ -451,13 +460,15 @@
             left: -100%;
             width: 50%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
             transform: skewX(-20deg);
             animation: shine 4s infinite;
         }
 
         @keyframes shine {
-            100% { left: 200%; }
+            100% {
+                left: 200%;
+            }
         }
 
         .cta-content h2 {
@@ -515,7 +526,8 @@
 
         /* Footer */
         .footer {
-            background-color: #020617; /* Very dark blue */
+            background-color: #020617;
+            /* Very dark blue */
             padding-top: 80px;
             border-top: 1px solid var(--border-color);
         }
@@ -541,12 +553,12 @@
             display: flex;
             gap: 16px;
         }
-        
+
         .social-icon {
             color: var(--text-tertiary);
             transition: var(--transition-base);
         }
-        
+
         .social-icon:hover {
             color: white;
         }
@@ -582,26 +594,72 @@
 
         /* Responsive Styles */
         @media (max-width: 1024px) {
-            h1 { font-size: 2.75rem; }
-            .cards-grid { grid-template-columns: repeat(2, 1fr); }
-            .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+            h1 {
+                font-size: 2.75rem;
+            }
+
+            .cards-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
+            }
         }
 
         @media (max-width: 768px) {
-            h1 { font-size: 2.25rem; }
-            .nav-links { display: none; } /* Hide nav links for simplicity on mobile as per requirement "responsive" but keep it simple */
-            .cards-grid { grid-template-columns: 1fr; }
-            .section-header { flex-direction: column; align-items: flex-start; gap: 16px; }
-            .footer-grid { grid-template-columns: 1fr; gap: 40px; }
-            .cta-buttons { flex-direction: column; }
-            .btn { width: 100%; text-align: center; }
-            .search-bar { padding-right: 24px; }
-            .search-btn { position: static; width: 100%; margin-top: 16px; transform: none; }
-            .search-btn:hover { transform: translateY(-2px); }
-        }
+            h1 {
+                font-size: 2.25rem;
+            }
 
+            .nav-links {
+                display: none;
+            }
+
+            /* Hide nav links for simplicity on mobile as per requirement "responsive" but keep it simple */
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .search-bar {
+                padding-right: 24px;
+            }
+
+            .search-btn {
+                position: static;
+                width: 100%;
+                margin-top: 16px;
+                transform: none;
+            }
+
+            .search-btn:hover {
+                transform: translateY(-2px);
+            }
+        }
     </style>
 </head>
+
 <body>
 
     <!-- Sticky Navbar -->
@@ -610,9 +668,11 @@
             <a href="#" class="navbar-brand">
                 <!-- Simple Logo Icon -->
                 <svg viewBox="0 0 24 24" fill="none">
-                    <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="var(--accent-primary)"/>
-                    <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="var(--accent-primary)" />
+                    <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
                 </svg>
                 Jobberhub
             </a>
@@ -630,15 +690,18 @@
     <section class="hero">
         <div class="container text-center">
             <h1>Find Your Next <span class="text-accent">Productivity Tool</span></h1>
-            <p class="subtitle">Empowering your career journey with the right tools. From resume builders to salary calculators, everything you need is here.</p>
-            
+            <p class="subtitle">Empowering your career journey with the right tools. From resume builders to salary
+                calculators, everything you need is here.</p>
+
             <div class="search-container">
                 <input type="text" class="search-bar" placeholder="What tool do you need? (e.g. Resume Builder)">
                 <button class="search-btn">Search</button>
             </div>
-            
+
             <div class="popular-tags">
-                Popular: <span>PDF Editor</span>, <span>Invoice Generator</span>, <span>Cover Letter AI</span>
+                Popular: <span>PDF Editor</span>, <a href="invoice.html"
+                    style="color: var(--text-secondary); font-weight: 500; margin-left: 4px; text-decoration: underline;">Invoice
+                    Generator</a>, <span>Cover Letter AI</span>
             </div>
         </div>
     </section>
@@ -662,7 +725,8 @@
             <div class="section-header">
                 <div>
                     <h2>Popular Tools</h2>
-                    <p class="subtitle" style="margin: 0; text-align: left;">Most used utilities by our community this week.</p>
+                    <p class="subtitle" style="margin: 0; text-align: left;">Most used utilities by our community this
+                        week.</p>
                 </div>
                 <a href="#" class="view-all-link">View all tools &rightarrow;</a>
             </div>
@@ -672,7 +736,14 @@
                 <div class="tool-card">
                     <div class="card-icon">
                         <!-- File Text Icon -->
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+                            <polyline points="14 2 14 8 20 8" />
+                            <line x1="16" y1="13" x2="8" y2="13" />
+                            <line x1="16" y1="17" x2="8" y2="17" />
+                            <polyline points="10 9 9 9 8 9" />
+                        </svg>
                     </div>
                     <h3>Resume Builder</h3>
                     <p class="card-desc">Create professional resumes in minutes with AI suggestions.</p>
@@ -682,7 +753,17 @@
                 <div class="tool-card">
                     <div class="card-icon">
                         <!-- Calculator Icon -->
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="16" y1="14" x2="16" y2="14"/><line x1="8" y1="14" x2="8" y2="14"/><line x1="12" y1="14" x2="12" y2="14"/><line x1="16" y1="18" x2="16" y2="18"/><line x1="8" y1="18" x2="8" y2="18"/><line x1="12" y1="18" x2="12" y2="18"/></svg>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="4" y="2" width="16" height="20" rx="2" ry="2" />
+                            <line x1="8" y1="6" x2="16" y2="6" />
+                            <line x1="16" y1="14" x2="16" y2="14" />
+                            <line x1="8" y1="14" x2="8" y2="14" />
+                            <line x1="12" y1="14" x2="12" y2="14" />
+                            <line x1="16" y1="18" x2="16" y2="18" />
+                            <line x1="8" y1="18" x2="8" y2="18" />
+                            <line x1="12" y1="18" x2="12" y2="18" />
+                        </svg>
                     </div>
                     <h3>Salary Calculator</h3>
                     <p class="card-desc">Estimate your take-home pay after taxes and deductions.</p>
@@ -692,21 +773,31 @@
                 <div class="tool-card">
                     <div class="card-icon">
                         <!-- Mic Icon -->
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" />
+                            <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+                            <line x1="12" y1="19" x2="12" y2="23" />
+                            <line x1="8" y1="23" x2="16" y2="23" />
+                        </svg>
                     </div>
                     <h3>Interview Prep AI</h3>
                     <p class="card-desc">Practice mock interviews with real-time AI feedback.</p>
                 </div>
 
                 <!-- Card 4 -->
-                <div class="tool-card">
+                <a href="invoice.html" class="tool-card">
                     <div class="card-icon">
                         <!-- Credit Card/Invoice Icon -->
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
+                            <line x1="1" y1="10" x2="23" y2="10" />
+                        </svg>
                     </div>
                     <h3>Invoice Generator</h3>
                     <p class="card-desc">Create and send professional invoices to clients instantly.</p>
-                </div>
+                </a>
             </div>
         </div>
     </section>
@@ -724,39 +815,68 @@
                 <div class="category-card">
                     <!-- Icon Background -->
                     <div class="category-icon-bg">
-                        <svg viewBox="0 0 24 24" fill="currentColor" width="100%" height="100%"><path d="M20 6h-4V4c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zM10 4h4v2h-4V4zm-6 2h16v12H4V6z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="100%" height="100%">
+                            <path
+                                d="M20 6h-4V4c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zM10 4h4v2h-4V4zm-6 2h16v12H4V6z" />
+                        </svg>
                     </div>
-                    
+
                     <div class="card-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                        </svg>
                     </div>
                     <h3 class="category-title">Job Seekers</h3>
-                    <p class="category-desc">Land your dream job faster with optimization tools, trackers, and guides.</p>
+                    <p class="category-desc">Land your dream job faster with optimization tools, trackers, and guides.
+                    </p>
                     <a href="#" class="explore-link">Explore Hub &rightarrow;</a>
                 </div>
 
                 <!-- Category 2 -->
                 <div class="category-card">
                     <div class="category-icon-bg">
-                         <svg viewBox="0 0 24 24" fill="currentColor" width="100%" height="100%"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="100%" height="100%">
+                            <path
+                                d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" />
+                        </svg>
                     </div>
 
                     <div class="card-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                        </svg>
                     </div>
                     <h3 class="category-title">HR & Recruiters</h3>
-                    <p class="category-desc">Streamline your hiring process with templates, calculators, and assessments.</p>
+                    <p class="category-desc">Streamline your hiring process with templates, calculators, and
+                        assessments.</p>
                     <a href="#" class="explore-link">Explore Hub &rightarrow;</a>
                 </div>
 
                 <!-- Category 3 -->
                 <div class="category-card">
                     <div class="category-icon-bg">
-                        <svg viewBox="0 0 24 24" fill="currentColor" width="100%" height="100%"><path d="M20 18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="100%" height="100%">
+                            <path
+                                d="M20 18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z" />
+                        </svg>
                     </div>
 
                     <div class="card-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
+                            <path
+                                d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" />
+                            <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0" />
+                            <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" />
+                        </svg>
                     </div>
                     <h3 class="category-title">Freelancers</h3>
                     <p class="category-desc">Manage gigs, track time, and handle finances effortlessly.</p>
@@ -766,11 +886,17 @@
                 <!-- Category 4 -->
                 <div class="category-card">
                     <div class="category-icon-bg">
-                       <svg viewBox="0 0 24 24" fill="currentColor" width="100%" height="100%"><path d="M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="100%" height="100%">
+                            <path d="M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99z" />
+                        </svg>
                     </div>
 
                     <div class="card-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                            <polyline points="17 6 23 6 23 12" />
+                        </svg>
                     </div>
                     <h3 class="category-title">Professionals</h3>
                     <p class="category-desc">Boost daily productivity and organize your professional life.</p>
@@ -786,7 +912,8 @@
             <div class="cta-banner">
                 <div class="cta-content">
                     <h2>Ready to accelerate your workflow?</h2>
-                    <p>Join thousands of professionals using Jobberhub to manage their careers and businesses efficiently.</p>
+                    <p>Join thousands of professionals using Jobberhub to manage their careers and businesses
+                        efficiently.</p>
                     <div class="cta-buttons">
                         <button class="btn btn-white">Get Started for Free</button>
                         <button class="btn btn-outline">Browse All Tools</button>
@@ -804,21 +931,34 @@
                 <div class="footer-col">
                     <a href="#" class="navbar-brand footer-brand">
                         <svg viewBox="0 0 24 24" fill="none">
-                            <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="var(--accent-primary)"/>
-                            <path d="M2 17L12 22L22 17" stroke="var(--text-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M2 12L12 17L22 12" stroke="var(--text-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="var(--accent-primary)" />
+                            <path d="M2 17L12 22L22 17" stroke="var(--text-primary)" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M2 12L12 17L22 12" stroke="var(--text-primary)" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                         Jobberhub
                     </a>
-                    <p class="footer-desc">Your one-stop destination for career tools, productivity resources, and professional growth.</p>
+                    <p class="footer-desc">Your one-stop destination for career tools, productivity resources, and
+                        professional growth.</p>
                     <div class="social-links">
                         <a href="#" class="social-icon">
                             <!-- Twitter/X -->
-                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+                                </path>
+                            </svg>
                         </a>
                         <a href="#" class="social-icon">
                             <!-- LinkedIn -->
-                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                </path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
                         </a>
                     </div>
                 </div>
@@ -829,7 +969,7 @@
                     <ul class="footer-links">
                         <li><a href="#">Resume Builder</a></li>
                         <li><a href="#">Salary Calculator</a></li>
-                        <li><a href="#">Invoice Generator</a></li>
+                        <li><a href="invoice.html">Invoice Generator</a></li>
                         <li><a href="#">PDF Tools</a></li>
                     </ul>
                 </div>
@@ -866,7 +1006,7 @@
 
     <script>
         // Simple script to handle sticky navbar background opacity on scroll
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             const navbar = document.querySelector('.navbar');
             if (window.scrollY > 50) {
                 navbar.style.backgroundColor = 'rgba(15, 23, 42, 0.95)';
@@ -878,5 +1018,5 @@
         });
     </script>
 </body>
-</html>
 
+</html>
