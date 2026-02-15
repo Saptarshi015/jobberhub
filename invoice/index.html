@@ -4,9 +4,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free GST Invoice Generator | Jobberhub</title>
+
+    <!-- Primary SEO -->
+    <title>Free GST Invoice Generator India | Download PDF Bill Online - Jobberhub</title>
     <meta name="description"
-        content="Create professional GST invoices for Indian clients. Privacy-first: Data stays on your device. Free online invoice generator.">
+        content="Create professional GST invoices for free. Best online bill maker for freelancers & small businesses in India. No login required. Calculate GST, HSN codes & download PDF instantly.">
+    <meta name="keywords"
+        content="free gst invoice generator india, gst bill maker, online invoice generator, gst billing software free, download pdf invoice, hsn code invoice, gst calculator india, professional invoice template">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://jobberhub.in/invoice">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jobberhub.in/invoice">
+    <meta property="og:title" content="Free GST Invoice Generator India | Jobberhub">
+    <meta property="og:description"
+        content="Make GST compliant invoices in seconds. Free, secure, and privacy-first. No signup needed.">
+    <meta property="og:image" content="https://jobberhub.in/assets/invoice-tool-preview.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://jobberhub.in/invoice">
+    <meta property="twitter:title" content="Free GST Invoice Generator India">
+    <meta property="twitter:description"
+        content="Make GST compliant invoices in seconds. Free, secure, and privacy-first. No signup needed.">
+    <meta property="twitter:image" content="https://jobberhub.in/assets/invoice-tool-preview.jpg">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Jobberhub GST Invoice Generator",
+      "url": "https://jobberhub.in/invoice",
+      "description": "A free online tool to generate GST-compliant invoices for Indian businesses and freelancers. Features PDF download, auto-calculation, and local data storage.",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "INR"
+      },
+      "featureList": "GST Calculation, PDF Download, HSN Code Support, Privacy-First Local Storage",
+      "author": {
+        "@type": "Organization",
+        "name": "Jobberhub"
+      }
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -381,17 +427,29 @@
         .seo-content h2 {
             margin-bottom: 1.5rem;
             color: var(--text-head);
+            font-size: 1.8rem;
+        }
+
+        .seo-content h3 {
+            margin-bottom: 1rem;
+            color: var(--text-head);
+            font-size: 1.3rem;
+            margin-top: 2rem;
         }
 
         .seo-content p,
         .seo-content ul {
             color: var(--text-body);
             margin-bottom: 1rem;
-            font-size: 0.95rem;
+            font-size: 1rem;
         }
 
         .seo-content ul {
             padding-left: 1.5rem;
+        }
+
+        .seo-content li {
+            margin-bottom: 0.5rem;
         }
 
         /* Footer */
@@ -521,215 +579,212 @@
                 padding: 0 0 2rem 0;
                 text-align: left;
             }
-        }
 
-        /* PDF Generation Specific Styles */
-        .pdf-mode {
-            font-family: 'Inter', sans-serif !important;
-            color: black !important;
-            background: white !important;
-        }
-
-        .pdf-mode .invoice-card {
-            background: white !important;
-            box-shadow: none !important;
-            border: none !important;
-            margin: 0 !important;
-            padding: 0 !important;
-            animation: none !important;
-        }
-
-        .pdf-mode * {
-            color: black !important;
-        }
-
-        .pdf-mode th {
-            background-color: #f1f5f9 !important;
-            border-bottom: 1px solid black !important;
-            font-weight: 700 !important;
-        }
-
-        .pdf-mode td {
-            border-bottom: 1px solid #e2e8f0 !important;
-        }
-
-        .pdf-mode .section-title {
-            color: black !important;
-            border-bottom: 2px solid black !important;
-            margin-bottom: 1rem !important;
-        }
-
-        .pdf-mode .grand-total {
-            border-top: 2px solid black !important;
+            .totals-container {
+                width: 300px;
+                margin-left: auto;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="container nav-content">
-            <a href="index.html" class="logo">Jobber<span>hub</span></a>
-            <ul class="nav-links">
-                <li><a href="#">Tools</a></li>
-                <li><a href="#">Hubs</a></li>
-                <li><a href="#">Blog</a></li>
-            </ul>
-        </div>
-    </nav>
+    <!-- Main App Wrapper for toggling visibility -->
+    <div id="main-app">
 
-    <div class="container">
-        <header>
-            <h1>Free GST Invoice Generator</h1>
-            <p>Create professional invoices for Indian clients. Privacy-first: Data stays on your device.</p>
-        </header>
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="container nav-content">
+                <a href="index.html" class="logo">Jobber<span>hub</span></a>
+                <ul class="nav-links">
+                    <li><a href="#">Tools</a></li>
+                    <li><a href="#">Hubs</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+        </nav>
 
-        <!-- Main Tool: Invoice -->
-        <main class="invoice-card" id="invoice-area">
+        <div class="container">
+            <header>
+                <h1>Free GST Invoice Generator India</h1>
+                <p>Create professional, GST-compliant invoices in seconds. Best free online bill maker for freelancers
+                    and small businesses.</p>
+            </header>
 
-            <div class="grid-2">
-                <!-- Bill From -->
-                <div>
-                    <div class="section-title">Bill From (Your Details)</div>
-                    <div class="form-group">
-                        <input type="text" id="fromName" placeholder="Business Name" class="item-input">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" id="fromGST" placeholder="GSTIN" class="item-input">
-                    </div>
-                    <div class="form-group">
-                        <textarea id="fromAddress" rows="3" placeholder="Address" class="item-input"></textarea>
-                    </div>
-                </div>
+            <!-- Main Tool: Invoice -->
+            <main class="invoice-card" id="invoice-area">
 
-                <!-- Bill To & Invoice Meta -->
-                <div>
-                    <!-- Meta -->
-                    <div class="grid-2" style="gap: 1rem; margin-bottom: 1.5rem;">
+                <div class="grid-2">
+                    <!-- Bill From -->
+                    <div>
+                        <div class="section-title">Bill From (Your Details)</div>
                         <div class="form-group">
-                            <label>Invoice Number</label>
-                            <input type="text" id="invoiceNo" value="INV-001" class="item-input">
+                            <input type="text" id="fromName" placeholder="Business Name" class="item-input">
                         </div>
                         <div class="form-group">
-                            <label>Invoice Date</label>
-                            <input type="date" id="invoiceDate" class="item-input">
+                            <input type="text" id="fromGST" placeholder="GSTIN" class="item-input">
+                        </div>
+                        <div class="form-group">
+                            <textarea id="fromAddress" rows="3" placeholder="Address" class="item-input"></textarea>
                         </div>
                     </div>
 
-                    <div class="section-title">Bill To (Client's Details)</div>
-                    <div class="form-group">
-                        <input type="text" id="toName" placeholder="Client Name" class="item-input">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" id="toGST" placeholder="Client GSTIN" class="item-input">
-                    </div>
-                    <div class="form-group">
-                        <textarea id="toAddress" rows="2" placeholder="Billing Address" class="item-input"></textarea>
-                    </div>
-                </div>
-            </div>
+                    <!-- Bill To & Invoice Meta -->
+                    <div>
+                        <!-- Meta -->
+                        <div class="grid-2" style="gap: 1rem; margin-bottom: 1.5rem;">
+                            <div class="form-group">
+                                <label>Invoice Number</label>
+                                <input type="text" id="invoiceNo" value="INV-001" class="item-input">
+                            </div>
+                            <div class="form-group">
+                                <label>Invoice Date</label>
+                                <input type="date" id="invoiceDate" class="item-input">
+                            </div>
+                        </div>
 
-            <!-- Items Table -->
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th class="col-desc">Item Description</th>
-                            <th class="col-hsn">HSN/SAC</th>
-                            <th class="col-qty">Msg/Qty</th>
-                            <th class="col-rate">Rate (₹)</th>
-                            <th class="col-gst">GST %</th>
-                            <th class="col-amt">Amount (₹)</th>
-                            <th class="col-act"></th>
-                        </tr>
-                    </thead>
-                    <tbody id="items-body">
-                        <!-- Rows generated via JS -->
-                    </tbody>
-                </table>
-            </div>
-
-            <button class="btn btn-secondary btn-sm add-row-btn" id="add-row">
-                + Add Item
-            </button>
-
-            <!-- Summary -->
-            <div class="summary-section">
-                <div class="words-container">
-                    <div class="section-title">Total in Words</div>
-                    <div class="amount-in-words" id="amount-words">Zero Rupees Only</div>
-                </div>
-
-                <div class="totals-container">
-                    <div class="total-row">
-                        <span>Subtotal</span>
-                        <span id="subtotal">₹0.00</span>
-                    </div>
-                    <div class="total-row">
-                        <span>Total GST</span>
-                        <span id="total-gst">₹0.00</span>
-                    </div>
-                    <div class="total-row grand-total">
-                        <span>Grand Total</span>
-                        <span id="grand-total">₹0.00</span>
+                        <div class="section-title">Bill To (Client's Details)</div>
+                        <div class="form-group">
+                            <input type="text" id="toName" placeholder="Client Name" class="item-input">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="toGST" placeholder="Client GSTIN" class="item-input">
+                        </div>
+                        <div class="form-group">
+                            <textarea id="toAddress" rows="2" placeholder="Billing Address"
+                                class="item-input"></textarea>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Items Table -->
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="col-desc">Item Description</th>
+                                <th class="col-hsn">HSN/SAC</th>
+                                <th class="col-qty">Msg/Qty</th>
+                                <th class="col-rate">Rate (₹)</th>
+                                <th class="col-gst">GST %</th>
+                                <th class="col-amt">Amount (₹)</th>
+                                <th class="col-act"></th>
+                            </tr>
+                        </thead>
+                        <tbody id="items-body">
+                            <!-- Rows generated via JS -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <button class="btn btn-secondary btn-sm add-row-btn" id="add-row">
+                    + Add Item
+                </button>
+
+                <!-- Summary -->
+                <div class="summary-section">
+                    <div class="words-container">
+                        <div class="section-title">Total in Words</div>
+                        <div class="amount-in-words" id="amount-words">Zero Rupees Only</div>
+                    </div>
+
+                    <div class="totals-container">
+                        <div class="total-row">
+                            <span>Subtotal</span>
+                            <span id="subtotal">₹0.00</span>
+                        </div>
+                        <div class="total-row">
+                            <span>Total GST</span>
+                            <span id="total-gst">₹0.00</span>
+                        </div>
+                        <div class="total-row grand-total">
+                            <span>Grand Total</span>
+                            <span id="grand-total">₹0.00</span>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+
+            <!-- Actions -->
+            <div class="actions-bar">
+                <button class="btn btn-secondary" onclick="window.print()">
+                    <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+                    </svg>
+                    Print Invoice
+                </button>
+                <button class="btn btn-primary" id="download-btn">
+                    <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                    </svg>
+                    Download PDF
+                </button>
             </div>
 
-        </main>
+            <!-- SEO Content -->
+            <section class="seo-content">
+                <h2>Best Free GST Invoice Generator for Indian Businesses</h2>
+                <p>Jobberhub provides the simplest <strong>free GST invoice generator India</strong> has to offer.
+                    Designed for freelancers, contractors, and small business owners, our tool allows you to create
+                    professional, compliant tax invoices in minutes without any complicated software or login
+                    requirements.</p>
 
-        <!-- Actions -->
-        <div class="actions-bar">
-            <button class="btn btn-secondary" onclick="window.print()">
-                <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
-                </svg>
-                Print Invoice
-            </button>
-            <button class="btn btn-primary" id="download-btn">
-                <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                </svg>
-                Download PDF
-            </button>
+                <h3>Why use our Online GST Bill Maker?</h3>
+                <ul>
+                    <li><strong>100% Free & No Login:</strong> Use our <em>online invoice generator</em> instantly. No
+                        hidden charges, no sign-up forms.</li>
+                    <li><strong>Privacy-First:</strong> We value your data privacy. All your client and billing details
+                        are stored locally on your device, not on our servers.</li>
+                    <li><strong>GST & HSN Compliant:</strong> Easily input HSN/SAC codes and select standard GST rates
+                        (5%, 12%, 18%, 28%) for accurate automatic calculations.</li>
+                    <li><strong>Download PDF Invoice:</strong> Generate a clean, professionally formatted PDF invoice
+                        with a single click. Compatible with mobile and desktop.</li>
+                </ul>
+
+                <h3>Features of this Free Invoice Tool</h3>
+                <p>Our <strong>GST billing software free</strong> tool is packed with essential features to streamline
+                    your invoicing process:</p>
+                <ul>
+                    <li><strong>Automatic Tax Calculation:</strong> Forget the calculator. Enter the rate and amount,
+                        and we handle the SGST, CGST, and IGST math for you.</li>
+                    <li><strong>Professional Templates:</strong> The generated PDF uses a clean, corporate design
+                        suitable for any industry.</li>
+                    <li><strong>Smart Storage:</strong> Your "Bill From" details are automatically saved to your
+                        browser, so you don't have to type them again next time.</li>
+                </ul>
+                <p>Start simplifying your business finances today with Jobberhub's <strong>free online GST invoice
+                        generator</strong>.</p>
+            </section>
         </div>
 
-        <!-- SEO Content -->
-        <section class="seo-content">
-            <h2>How to use this Invoice Generator</h2>
-            <p>Welcome to Jobberhub's free GST invoice generator. This tool is designed for freelancers, small business
-                owners, and contractors in India who need a quick, compliant way to bill their clients.</p>
-            <ul>
-                <li><strong>Privacy First:</strong> We do not store your data. All details are saved locally on your
-                    browser.</li>
-                <li><strong>GST Compliant:</strong> Easily add HSN codes and GST rates (5%, 12%, 18%, 28%).</li>
-                <li><strong>Instant Calculation:</strong> No need for a calculator—taxes and totals update
-                    automatically.</li>
-            </ul>
-        </section>
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-links">
+                    <a href="#">About Us</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Contact</a>
+                </div>
+                <p>&copy; 2026 Jobberhub.in. All rights reserved. Made with &hearts; in India.</p>
+            </div>
+        </footer>
     </div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-links">
-                <a href="#">About Us</a>
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-                <a href="#">Contact</a>
-            </div>
-            <p>&copy; 2026 Jobberhub.in. All rights reserved. Made with &hearts; in India.</p>
-        </div>
-    </footer>
+    <!-- PDF Generation Container (Hidden by default) -->
+    <div id="pdf-container" style="display: none;"></div>
 
     <script>
         // DOM Elements
+        const mainApp = document.getElementById('main-app');
         const itemsBody = document.getElementById('items-body');
         const addRowBtn = document.getElementById('add-row');
         const downloadBtn = document.getElementById('download-btn');
+        const pdfContainer = document.getElementById('pdf-container');
 
         // State
         const GST_RATES = [0, 5, 12, 18, 28];
@@ -878,107 +933,191 @@
             return convert(Math.floor(n)) + " Rupees";
         }
 
-        // Download PDF Function (Robust 'Visible Overlay' Method)
+        // Download PDF Function (ISOLATION METHOD)
         downloadBtn.addEventListener('click', () => {
-            // Feedback to user
             const originalText = downloadBtn.innerHTML;
             downloadBtn.innerHTML = 'Generating...';
             downloadBtn.disabled = true;
 
-            // 1. Get Elements
-            const original = document.getElementById('invoice-area');
+            // 1. Gather Data (Before hiding anything)
+            // Ensure even if fields are empty, we have placeholders
+            const data = {
+                fromName: document.getElementById('fromName').value.trim() || 'Business Info',
+                fromGST: document.getElementById('fromGST').value.trim() || '-',
+                fromAddress: document.getElementById('fromAddress').value.trim() || '',
+                toName: document.getElementById('toName').value.trim() || 'Client Info',
+                toGST: document.getElementById('toGST').value.trim() || '-',
+                toAddress: document.getElementById('toAddress').value.trim() || '',
+                invoiceNo: document.getElementById('invoiceNo').value.trim() || '-',
+                invoiceDate: document.getElementById('invoiceDate').value.trim() || '-',
+                words: document.getElementById('amount-words').textContent,
+                subtotal: document.getElementById('subtotal').textContent,
+                totalGST: document.getElementById('total-gst').textContent,
+                grandTotal: document.getElementById('grand-total').textContent,
+                items: []
+            };
 
-            // 2. Clone the element to avoid touching the DOM
-            const clone = original.cloneNode(true);
+            document.querySelectorAll('#items-body tr').forEach(tr => {
+                const inputs = tr.querySelectorAll('input, select');
+                data.items.push({
+                    desc: inputs[0].value,
+                    hsn: inputs[1].value,
+                    qty: inputs[2].value,
+                    rate: inputs[3].value,
+                    gst: inputs[4].options[inputs[4].selectedIndex].text,
+                    amt: tr.querySelector('.amount-cell').textContent
+                });
+            });
 
-            // 3. Create a wrapper that acts as a visible overlay.
-            // html2canvas works best when the element is actually visible in the viewport.
-            const wrapper = document.createElement('div');
-            wrapper.style.position = 'fixed';
-            wrapper.style.top = '0';
-            wrapper.style.left = '0';
-            wrapper.style.width = '100%';
-            wrapper.style.height = '100vh'; // Full viewport
-            wrapper.style.overflowY = 'auto'; // Allow scrolling if needed
-            wrapper.style.zIndex = '10000';
-            wrapper.style.backgroundColor = 'white';
-            wrapper.style.padding = '40px';
-            wrapper.style.boxSizing = 'border-box';
+            // 2. Hide Main App & Prepare PDF Container
+            const scrollPos = window.scrollY;
+            mainApp.style.display = 'none'; // Hide application
+            pdfContainer.style.display = 'block'; // Show PDF container
+            document.body.style.backgroundColor = 'white'; // Force white body
 
-            // Apply specific PDF modifications to the wrapper
-            wrapper.classList.add('pdf-mode');
+            // 3. Populate PDF Template
+            // FIXED: Width 750px, No Auto Margins, Explicit Padding.
+            // This ensures html2canvas captures from x=0 and doesn't clip left side.
+            pdfContainer.innerHTML = `
+                <div style="font-family: 'Helvetica', 'Arial', sans-serif; padding: 40px; background: white; color: black; width: 750px; margin: 0; box-sizing: border-box;">
+                    
+                    <!-- Header -->
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2px solid #eee; padding-bottom: 20px; margin-bottom: 30px;">
+                        <div style="max-width: 60%;">
+                            <h1 style="margin: 0; font-size: 26px; font-weight: 700; color: #111; line-height: 1.2;">${data.fromName}</h1>
+                            <p style="margin: 5px 0 0; font-size: 14px; color: #555;">GSTIN: ${data.fromGST}</p>
+                        </div>
+                        <div style="text-align: right;">
+                            <h2 style="margin: 0; font-size: 24px; color: #2563EB; font-weight: 600;">INVOICE</h2>
+                            <p style="margin: 5px 0 0; font-size: 14px; color: #333;"><b>#${data.invoiceNo}</b></p>
+                            <p style="margin: 2px 0 0; font-size: 14px; color: #555;">Date: ${data.invoiceDate}</p>
+                        </div>
+                    </div>
 
-            // 4. Transform Inputs/Textareas/Selects to plain text in the CLONE
-            // We must map values from the ORIGINAL inputs to the CLONE's text
-            const originalInputs = original.querySelectorAll('input, textarea, select');
-            const cloneInputs = clone.querySelectorAll('input, textarea, select');
+                    <!-- Address Grid -->
+                    <div style="display: flex; gap: 40px; margin-bottom: 40px;">
+                        <div style="flex: 1;">
+                            <h3 style="font-size: 12px; text-transform: uppercase; color: #888; margin-bottom: 10px; font-weight: 600;">Bill From</h3>
+                            <div style="font-size: 14px; line-height: 1.5; color: #000;">
+                                <strong>${data.fromName}</strong><br>
+                                ${data.fromAddress ? data.fromAddress.replace(/\\n/g, '<br>') : ''}
+                            </div>
+                        </div>
+                        <div style="flex: 1;">
+                            <h3 style="font-size: 12px; text-transform: uppercase; color: #888; margin-bottom: 10px; font-weight: 600;">Bill To</h3>
+                            <div style="font-size: 14px; line-height: 1.5; color: #000;">
+                                <strong>${data.toName}</strong><br>
+                                ${data.toAddress ? data.toAddress.replace(/\\n/g, '<br>') : ''}<br>
+                                <span style="color: #444;">GSTIN: ${data.toGST}</span>
+                            </div>
+                        </div>
+                    </div>
 
-            // We iterate via index assuming the DOM structure is identical
-            for (let i = 0; i < originalInputs.length; i++) {
-                const source = originalInputs[i];
-                const target = cloneInputs[i];
+                    <!-- Table -->
+                    <table style="width: 100%; border-collapse: collapse; margin-bottom: 30px;">
+                        <thead>
+                            <tr style="background-color: #F8FAFC; border-bottom: 2px solid #E2E8F0;">
+                                <th style="text-align: left; padding: 12px; font-size: 13px; color: #475569; font-weight: 600; text-transform: uppercase;">Item Description</th>
+                                <th style="text-align: left; padding: 12px; font-size: 13px; color: #475569; font-weight: 600; text-transform: uppercase;">HSN</th>
+                                <th style="text-align: center; padding: 12px; font-size: 13px; color: #475569; font-weight: 600; text-transform: uppercase;">Qty</th>
+                                <th style="text-align: right; padding: 12px; font-size: 13px; color: #475569; font-weight: 600; text-transform: uppercase;">Rate</th>
+                                <th style="text-align: center; padding: 12px; font-size: 13px; color: #475569; font-weight: 600; text-transform: uppercase;">GST</th>
+                                <th style="text-align: right; padding: 12px; font-size: 13px; color: #475569; font-weight: 600; text-transform: uppercase;">Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${data.items.map(function (item) {
+                return `
+                                <tr style="border-bottom: 1px solid #F1F5F9;">
+                                    <td style="padding: 12px; font-size: 14px; color: #000;">${item.desc || '-'}</td>
+                                    <td style="padding: 12px; font-size: 14px; color: #444;">${item.hsn || '-'}</td>
+                                    <td style="padding: 12px; font-size: 14px; color: #000; text-align: center;">${item.qty}</td>
+                                    <td style="padding: 12px; font-size: 14px; color: #000; text-align: right;">${item.rate}</td>
+                                    <td style="padding: 12px; font-size: 14px; color: #444; text-align: center;">${item.gst}</td>
+                                    <td style="padding: 12px; font-size: 14px; color: #000; font-weight: 600; text-align: right;">${item.amt}</td>
+                                </tr>
+                                `
+            }).join('')}
+                        </tbody>
+                    </table>
 
-                let value = source.value;
-                if (source.tagName === 'SELECT') {
-                    value = source.options[source.selectedIndex]?.text || '';
-                }
+                    <!-- Totals -->
+                    <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+                        <div style="flex: 1; padding-right: 40px;">
+                            <p style="font-size: 13px; color: #64748B; margin-bottom: 5px;">Total in words:</p>
+                            <p style="font-size: 14px; font-weight: 600; color: #0f172a; font-style: italic;">${data.words}</p>
+                            <div style="margin-top: 40px; padding: 15px; background: #F8FAFC; border-radius: 4px; border: 1px solid #E2E8F0;">
+                                <p style="font-size: 12px; color: #64748B; margin: 0;"><strong>Terms & Conditions:</strong><br>1. Goods once sold will not be taken back.<br>2. Interest @ 18% p.a. will be charged if payment is delayed.</p>
+                            </div>
+                        </div>
+                        <div style="width: 300px;">
+                            <div style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #F1F5F9;">
+                                <span style="font-size: 14px; color: #64748B;">Subtotal</span>
+                                <span style="font-size: 14px; color: #0F172A; font-weight: 500;">${data.subtotal}</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #F1F5F9;">
+                                <span style="font-size: 14px; color: #64748B;">Total GST</span>
+                                <span style="font-size: 14px; color: #0F172A; font-weight: 500;">${data.totalGST}</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; padding: 15px 0; margin-top: 5px; align-items: center;">
+                                <span style="font-size: 16px; color: #0F172A; font-weight: 700;">Grand Total</span>
+                                <span style="font-size: 20px; color: #2563EB; font-weight: 700;">${data.grandTotal}</span>
+                            </div>
+                            <div style="margin-top: 50px; text-align: right; margin-right: 10px;">
+                                <div style="height: 60px;"></div>
+                                <p style="font-size: 13px; color: #0F172A; font-weight: 600; border-top: 1px solid #000; display: inline-block; padding-top: 5px; padding-left: 20px; padding-right: 20px;">Authorized Signatory</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
 
-                // Create a text node
-                const p = document.createElement('div');
-                p.textContent = value;
-                p.style.fontWeight = '500';
-                p.style.marginBottom = '5px';
-                p.style.whiteSpace = 'pre-wrap'; // Preserve lines for textareas
-                p.style.color = 'black';
-
-                if (!value || value.trim() === '') {
-                    p.innerHTML = '&nbsp;';
-                }
-
-                // Replace the input in the clone with this text
-                if (target && target.parentNode) {
-                    target.parentNode.insertBefore(p, target);
-                    target.parentNode.removeChild(target);
-                }
-            }
-
-            // Remove 'Add Item' buttons or delete buttons from clone
-            const buttons = clone.querySelectorAll('button, .add-row-btn');
-            buttons.forEach(b => b.remove());
-
-            wrapper.appendChild(clone);
-            document.body.appendChild(wrapper);
+            // 4. Reset Scroll to ensure accurate capture
+            window.scrollTo(0, 0);
 
             // 5. Generate PDF
-            const invoiceNo = document.getElementById('invoiceNo').value || 'Invoice';
             const opt = {
-                margin: 0.5,
-                filename: 'Invoice_' + invoiceNo + '.pdf',
+                margin: 0,
+                filename: `Invoice_${data.invoiceNo}.pdf`,
                 image: { type: 'jpeg', quality: 0.98 },
                 html2canvas: {
                     scale: 2,
-                    logging: false,
+                    scrollY: 0,
+                    x: 0,
+                    y: 0,
                     useCORS: true,
-                    backgroundColor: '#ffffff' // Force white background
+                    windowWidth: 794 // Exact A4 logic
                 },
                 jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
             };
 
-            // Small timeout to ensure DOM render
+            // Delay to resolve rendering
             setTimeout(() => {
-                html2pdf().set(opt).from(wrapper).save().then(() => {
-                    // Cleanup
-                    if (document.body.contains(wrapper)) document.body.removeChild(wrapper);
+                html2pdf().set(opt).from(pdfContainer).save().then(() => {
+                    // 6. Restore UI
+                    pdfContainer.innerHTML = '';
+                    pdfContainer.style.display = 'none';
+                    mainApp.style.display = 'block';
+                    document.body.style.backgroundColor = ''; // Remove inline override
+                    window.scrollTo(0, scrollPos);
+
                     downloadBtn.innerHTML = originalText;
                     downloadBtn.disabled = false;
                 }).catch(err => {
-                    console.error(err);
-                    alert('Error generating PDF. Please try "Print Invoice" > "Save as PDF" instead.');
-                    if (document.body.contains(wrapper)) document.body.removeChild(wrapper);
+                    console.error('PDF Error:', err);
+
+                    // Restore UI on error
+                    pdfContainer.innerHTML = '';
+                    pdfContainer.style.display = 'none';
+                    mainApp.style.display = 'block';
+                    document.body.style.backgroundColor = '';
+                    window.scrollTo(0, scrollPos);
+
+                    alert('PDF generation failed. Fallback: Please use the Print button > Save as PDF.');
                     downloadBtn.innerHTML = originalText;
                     downloadBtn.disabled = false;
                 });
-            }, 500);
+            }, 600);
         });
     </script>
 </body>
