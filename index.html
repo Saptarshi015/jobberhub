@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobberhub - Productivity Tools for Professionals</title>
+    <meta name="description" content="Empowering your career journey with the right tools. From resume builders to salary calculators, everything you need is here.">
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Modern Dark Theme Variables */
+        :root {
+            --bg-primary: #0F172A;
+            --bg-secondary: #1E293B;
+            --bg-card: #1E293B;
+            --bg-card-hover: #334155;
+            --accent-primary: #2563EB;
+            --accent-hover: #1D4ED8;
+            --text-primary: #F8FAFC;
+            --text-secondary: #94A3B8;
+            --text-tertiary: #64748B;
+            --border-color: #334155;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --transition-base: all 0.3s ease;
+        }
+
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition-base);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        button, input {
+            font-family: inherit;
+            border: none;
+            outline: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .grid {
+            display: grid;
+            gap: 24px;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .items-center {
+            align-items: center;
+        }
+
+        .justify-between {
+            justify-content: space-between;
+        }
+
+        .justify-center {
+            justify-content: center;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            color: var(--text-primary);
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        p.subtitle {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 1rem;
+        }
+
+        .text-accent {
+            color: var(--accent-primary);
+        }
+
+        /* Navbar */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background-color: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 16px 0;
+            transition: var(--transition-base);
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .navbar-brand svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--text-primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        .nav-link:hover {
+            color: var(--text-primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Background glow effect */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.15) 0%, rgba(15, 23, 42, 0) 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .search-container {
+            max-width: 600px;
+            margin: 40px auto 24px;
+            position: relative;
+        }
+
+        .search-bar {
+            width: 100%;
+            padding: 16px 24px;
+            padding-right: 140px;
+            background-color: rgba(30, 41, 59, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 9999px; /* Pill shape */
+            color: var(--text-primary);
+            font-size: 1rem;
+            transition: var(--transition-base);
+        }
+
+        .search-bar:focus {
+            border-color: var(--accent-primary);
+            background-color: rgba(30, 41, 59, 0.9);
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: var(--accent-primary);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 9999px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-base);
+        }
+
+        .search-btn:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-50%) scale(1.05); /* Slight scale on hover */
+        }
+
+        .popular-tags {
+            font-size: 0.875rem;
+            color: var(--text-tertiary);
+        }
+
+        .popular-tags span {
+            color: var(--text-secondary);
+            font-weight: 500;
+            margin-left: 4px;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        /* Social Proof */
+        .social-proof {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .trusted-text {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-tertiary);
+            margin-bottom: 24px;
+            font-weight: 600;
+        }
+
+        .logos-grid {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
+            opacity: 0.6;
+        }
+
+        .logo-item {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Cards Grid Layout */
+        .cards-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 40px;
+        }
+
+        .view-all-link {
+            color: var(--accent-primary);
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .view-all-link:hover {
+            text-decoration: underline;
+        }
+        
+        /* Tool Cards */
+        .tool-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            transition: var(--transition-base);
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-primary);
+            box-shadow: var(--shadow-lg);
+            background-color: var(--bg-card-hover);
+        }
+
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            background-color: rgba(37, 99, 235, 0.1);
+            color: var(--accent-primary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+
+        .card-desc {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-top: 8px;
+            line-height: 1.5;
+        }
+
+        /* Category Cards */
+        .category-card {
+            background-color: var(--bg-card);
+            border-radius: 16px; /* Slightly more rounded */
+            padding: 32px 24px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid transparent;
+            min-height: 280px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            transition: var(--transition-base);
+        }
+
+        /* Abstract background shapes using radial gradients */
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 70%);
+            border-radius: 50%;
+            transition: var(--transition-base);
+        }
+
+        .category-card:hover {
+             border-color: var(--border-color);
+             background-color: var(--bg-card-hover);
+             transform: scale(1.02);
+        }
+
+        .category-card:hover::before {
+            transform: scale(1.5);
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.1) 0%, rgba(37, 99, 235, 0) 70%);
+        }
+
+        .category-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            z-index: 1;
+        }
+
+        .category-desc {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 24px;
+            z-index: 1;
+        }
+
+        .explore-link {
+            color: var(--accent-primary);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            z-index: 1;
+        }
+
+        .category-icon-bg {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            opacity: 0.05;
+            width: 80px;
+            height: 80px;
+            transition: var(--transition-base);
+        }
+
+        .category-card:hover .category-icon-bg {
+            opacity: 0.1;
+            transform: rotate(10deg);
+        }
+
+
+        /* CTA Section */
+        .cta-section {
+            padding: 60px 0;
+        }
+
+        .cta-banner {
+            background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+            border-radius: 20px;
+            padding: 60px 40px;
+            text-align: center;
+            box-shadow: 0 20px 25px -5px rgba(37, 99, 235, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Decorative shine */
+        .cta-banner::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transform: skewX(-20deg);
+            animation: shine 4s infinite;
+        }
+
+        @keyframes shine {
+            100% { left: 200%; }
+        }
+
+        .cta-content h2 {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .cta-content p {
+            font-size: 1.125rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 32px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition-base);
+            display: inline-block;
+        }
+
+        .btn-white {
+            background-color: white;
+            color: var(--accent-primary);
+        }
+
+        .btn-white:hover {
+            background-color: #f1f5f9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-outline {
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            background: transparent;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            border-color: white;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #020617; /* Very dark blue */
+            padding-top: 80px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-grid {
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand {
+            margin-bottom: 24px;
+            display: block;
+        }
+
+        .footer-desc {
+            color: var(--text-tertiary);
+            font-size: 0.95rem;
+            margin-bottom: 24px;
+            max-width: 300px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 16px;
+        }
+        
+        .social-icon {
+            color: var(--text-tertiary);
+            transition: var(--transition-base);
+        }
+        
+        .social-icon:hover {
+            color: white;
+        }
+
+        .footer-col h4 {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-primary);
+            margin-bottom: 24px;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-primary);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 32px 0;
+            text-align: center;
+            color: var(--text-tertiary);
+            font-size: 0.875rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            h1 { font-size: 2.75rem; }
+            .cards-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.25rem; }
+            .nav-links { display: none; } /* Hide nav links for simplicity on mobile as per requirement "responsive" but keep it simple */
+            .cards-grid { grid-template-columns: 1fr; }
+            .section-header { flex-direction: column; align-items: flex-start; gap: 16px; }
+            .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+            .cta-buttons { flex-direction: column; }
+            .btn { width: 100%; text-align: center; }
+            .search-bar { padding-right: 24px; }
+            .search-btn { position: static; width: 100%; margin-top: 16px; transform: none; }
+            .search-btn:hover { transform: translateY(-2px); }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Sticky Navbar -->
+    <header class="navbar">
+        <div class="container flex justify-between items-center">
+            <a href="#" class="navbar-brand">
+                <!-- Simple Logo Icon -->
+                <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="var(--accent-primary)"/>
+                    <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Jobberhub
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#tools" class="nav-link">Tools</a></li>
+                    <li><a href="#hubs" class="nav-link">Hubs</a></li>
+                    <li><a href="#blog" class="nav-link">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container text-center">
+            <h1>Find Your Next <span class="text-accent">Productivity Tool</span></h1>
+            <p class="subtitle">Empowering your career journey with the right tools. From resume builders to salary calculators, everything you need is here.</p>
+            
+            <div class="search-container">
+                <input type="text" class="search-bar" placeholder="What tool do you need? (e.g. Resume Builder)">
+                <button class="search-btn">Search</button>
+            </div>
+            
+            <div class="popular-tags">
+                Popular: <span>PDF Editor</span>, <span>Invoice Generator</span>, <span>Cover Letter AI</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="social-proof">
+        <div class="container text-center">
+            <div class="trusted-text">TRUSTED BY PROFESSIONALS AT</div>
+            <div class="logos-grid">
+                <div class="logo-item">TechCorp</div>
+                <div class="logo-item">GlobalHR</div>
+                <div class="logo-item">Freelancely</div>
+                <div class="logo-item">CareerPath</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Tools Section -->
+    <section id="tools" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <div>
+                    <h2>Popular Tools</h2>
+                    <p class="subtitle" style="margin: 0; text-align: left;">Most used utilities by our community this week.</p>
+                </div>
+                <a href="#" class="view-all-link">View all tools &rightarrow;</a>
+            </div>
+
+            <div class="grid cards-grid">
+                <!-- Card 1 -->
+                <div class="tool-card">
+                    <div class="card-icon">
+                        <!-- File Text Icon -->
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                    </div>
+                    <h3>Resume Builder</h3>
+                    <p class="card-desc">Create professional resumes in minutes with AI suggestions.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="tool-card">
+                    <div class="card-icon">
+                        <!-- Calculator Icon -->
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="16" y1="14" x2="16" y2="14"/><line x1="8" y1="14" x2="8" y2="14"/><line x1="12" y1="14" x2="12" y2="14"/><line x1="16" y1="18" x2="16" y2="18"/><line x1="8" y1="18" x2="8" y2="18"/><line x1="12" y1="18" x2="12" y2="18"/></svg>
+                    </div>
+                    <h3>Salary Calculator</h3>
+                    <p class="card-desc">Estimate your take-home pay after taxes and deductions.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="tool-card">
+                    <div class="card-icon">
+                        <!-- Mic Icon -->
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+                    </div>
+                    <h3>Interview Prep AI</h3>
+                    <p class="card-desc">Practice mock interviews with real-time AI feedback.</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="tool-card">
+                    <div class="card-icon">
+                        <!-- Credit Card/Invoice Icon -->
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                    </div>
+                    <h3>Invoice Generator</h3>
+                    <p class="card-desc">Create and send professional invoices to clients instantly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Browse by Category Section -->
+    <section id="hubs" class="section-padding" style="background-color: var(--bg-secondary);">
+        <div class="container">
+            <div class="text-center" style="margin-bottom: 60px;">
+                <h2>Browse by Category</h2>
+                <p class="subtitle">Tailored hubs designed for your specific career needs.</p>
+            </div>
+
+            <div class="grid cards-grid">
+                <!-- Category 1 -->
+                <div class="category-card">
+                    <!-- Icon Background -->
+                    <div class="category-icon-bg">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="100%" height="100%"><path d="M20 6h-4V4c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zM10 4h4v2h-4V4zm-6 2h16v12H4V6z"/></svg>
+                    </div>
+                    
+                    <div class="card-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                    </div>
+                    <h3 class="category-title">Job Seekers</h3>
+                    <p class="category-desc">Land your dream job faster with optimization tools, trackers, and guides.</p>
+                    <a href="#" class="explore-link">Explore Hub &rightarrow;</a>
+                </div>
+
+                <!-- Category 2 -->
+                <div class="category-card">
+                    <div class="category-icon-bg">
+                         <svg viewBox="0 0 24 24" fill="currentColor" width="100%" height="100%"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                    </div>
+
+                    <div class="card-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <h3 class="category-title">HR & Recruiters</h3>
+                    <p class="category-desc">Streamline your hiring process with templates, calculators, and assessments.</p>
+                    <a href="#" class="explore-link">Explore Hub &rightarrow;</a>
+                </div>
+
+                <!-- Category 3 -->
+                <div class="category-card">
+                    <div class="category-icon-bg">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="100%" height="100%"><path d="M20 18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z"/></svg>
+                    </div>
+
+                    <div class="card-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
+                    </div>
+                    <h3 class="category-title">Freelancers</h3>
+                    <p class="category-desc">Manage gigs, track time, and handle finances effortlessly.</p>
+                    <a href="#" class="explore-link">Explore Hub &rightarrow;</a>
+                </div>
+
+                <!-- Category 4 -->
+                <div class="category-card">
+                    <div class="category-icon-bg">
+                       <svg viewBox="0 0 24 24" fill="currentColor" width="100%" height="100%"><path d="M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99z"/></svg>
+                    </div>
+
+                    <div class="card-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                    </div>
+                    <h3 class="category-title">Professionals</h3>
+                    <p class="category-desc">Boost daily productivity and organize your professional life.</p>
+                    <a href="#" class="explore-link">Explore Hub &rightarrow;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-banner">
+                <div class="cta-content">
+                    <h2>Ready to accelerate your workflow?</h2>
+                    <p>Join thousands of professionals using Jobberhub to manage their careers and businesses efficiently.</p>
+                    <div class="cta-buttons">
+                        <button class="btn btn-white">Get Started for Free</button>
+                        <button class="btn btn-outline">Browse All Tools</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="grid footer-grid">
+                <!-- Col 1 -->
+                <div class="footer-col">
+                    <a href="#" class="navbar-brand footer-brand">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="var(--accent-primary)"/>
+                            <path d="M2 17L12 22L22 17" stroke="var(--text-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 12L12 17L22 12" stroke="var(--text-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Jobberhub
+                    </a>
+                    <p class="footer-desc">Your one-stop destination for career tools, productivity resources, and professional growth.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon">
+                            <!-- Twitter/X -->
+                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <!-- LinkedIn -->
+                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Col 2 -->
+                <div class="footer-col">
+                    <h4>Tools</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Resume Builder</a></li>
+                        <li><a href="#">Salary Calculator</a></li>
+                        <li><a href="#">Invoice Generator</a></li>
+                        <li><a href="#">PDF Tools</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 -->
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Career Guides</a></li>
+                        <li><a href="#">Help Center</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4 -->
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Jobberhub.in. All rights reserved.</p>
+                <div style="margin-top: 8px; font-size: 0.75rem; opacity: 0.6;">
+                    Made with <span style="color: red;">&#10084;</span> for productivity
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple script to handle sticky navbar background opacity on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.backgroundColor = 'rgba(15, 23, 42, 0.95)';
+                navbar.style.boxShadow = 'var(--shadow-md)';
+            } else {
+                navbar.style.backgroundColor = 'rgba(15, 23, 42, 0.8)';
+                navbar.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
